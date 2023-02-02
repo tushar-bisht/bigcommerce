@@ -3,7 +3,7 @@ name: Push Stencil Theme To BigCommerce
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build:
