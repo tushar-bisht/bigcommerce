@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     name: Stencil Push
-    runs-on: ubuntu-latest
+    runs-on: ubuntu:20.04
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v1
@@ -18,10 +18,10 @@ jobs:
         with:
           node-version: 14
 
- #     - name: Install Dependencies
- #       run: |
- #         npm install -g @bigcommerce/stencil-cli
- #         yarn
+      - name: Install Dependencies
+        run: |
+          npm install -g @bigcommerce/stencil-cli
+          yarn
 
       - name: Connect to store
         env:
@@ -31,5 +31,5 @@ jobs:
 
       - name: Push Theme
         run: |
-          stencil pull -a Light -d
+          stencil push -a Light -d
 
